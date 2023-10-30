@@ -6,6 +6,10 @@ import { Routes, Route, Form } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
 import Registration from './Registration';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import LittleFooter from "./components/LittleFooter";
+import MainPage from "./MainPage";
 
 function App() {
   return (
@@ -14,8 +18,12 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
       </Routes>
+      <Header />
+      <MainPage/>
+      <Footer />
+      <LittleFooter />
     </div>
   );
 }
 
-export default App; 
+export default App;

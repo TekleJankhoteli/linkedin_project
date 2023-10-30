@@ -1,38 +1,302 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap');
+*,*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mainContainer{
+   display: flex;
+   flex-direction: column;
+}
+/* Login Page */
+header{
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.containerForLogin{
+display: flex;
+flex-direction: column;
+
+}
+main{
+    display: flex;
+    flex-direction: row;
+}
+.loginPhotoOne{
+
+    border-radius: 471px;
+background: radial-gradient(50% 50% at 50% 50%, #F1F38F 0%, rgba(255, 255, 255, 0.60) 100%);
+}
+.loginPhotoOneImg{
+    width: 400px;
+    position: relative;
+    bottom: -200px;
+  
+
+
+   
+ 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.loginPhotoOneTwoImg{
+    width: 400px;
+   
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.ContainerForLoginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loginH1{
+color: #0D4C70;
+text-align: center;
+font-size: 60px;
+font-style: normal;
+font-weight: 400;
+line-height: 70px; 
+letter-spacing: -1.2px;
+margin-bottom: 20px;
+}
+.loginEmail{
+ width: 556px;
+height: 60px;
+border-radius: 43px;
+border: 1px solid #CCC;
+background: #FFF;
+margin-bottom: 20px;
+padding-left: 10px;
+}
+.loginPassword{
+width: 556px;
+height: 60px;
+border-radius: 43px;
+border: 1px solid #CCC;
+background: #FFF;
+margin-bottom: 20px;
+padding-left: 10px;
+}
+.loginTerms{
+color: #747171;
+text-align: center;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 30px;
+padding-left: 90px;
+padding-right: 90px;
+margin-bottom: 15px;
+}
+.loginTermsSpan{
+color: #0077B7;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 30px;
+}
+
+.loginSubmitButton{
+width: 315px;
+height: 60px;
+color: #FFF;
+border: none;
+border-radius: 30px;
+background: #0077B7;
+text-align: center;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-bottom: 15px;
+cursor: pointer;
+}
+
+.redirectToRegistration{
+    width: 315px;
+height: 60px;
+color: #FFF;
+border: none;
+border-radius: 30px;
+background: rgb(125, 244, 125);
+text-align: center;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+cursor: pointer;
+}
+
+/* Registration Page */
+
+.ContainerForRegistrationForm{
+    display: flex;
+   flex-direction: column;
+  
+ 
+  
+}
+.registrationPageForFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.registrationH1{
+    color: #0D4C70;
+text-align: center;
+font-size: 60px;
+font-style: normal;
+font-weight: 400;
+line-height: 70px; 
+letter-spacing: -1.2px;
+margin-bottom: 20px;
+}
+.registrationForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+.registrationName{
+    width: 471px;
+    height: 60px;
+    border-radius: 43px;
+    border: 1px solid #CCC;
+    background: #FFF;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+.registrationEmail{
+    width: 471px;
+    height: 60px;
+    border-radius: 43px;
+    border: 1px solid #CCC;
+    background: #FFF;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+.registrationPassword{
+    width: 471px;
+    height: 60px;
+    border-radius: 43px;
+    border: 1px solid #CCC;
+    background: #FFF;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+.birthdateFields{
+    display: flex;
+  gap: 24px;
+  
+}
+.registrationBirthdate{
+    width: 141px;
+height: 42px;
+border-radius: 50px;
+border: 1px solid #CCC;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+
+.registrationTerms{
+    color: #747171;
+text-align: center;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 30px;
+padding-left: 30px;
+padding-right: 30px;
+margin-bottom: 15px;
+}
+
+.registrationTermsSpan{
+    color: #0077B7;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 30px;
+}
+.registrationSubmitButton{
+    width: 315px;
+height: 60px;
+color: #FFF;
+border: none;
+border-radius: 30px;
+background: #0077B7;
+text-align: center;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-bottom: 15px;
+cursor: pointer;
+}
+
+.redirectToLogin{
+    align-self: center;
+    width: 315px;
+    height: 60px;
+    color: #FFF;
+    border: none;
+    border-radius: 30px;
+    background: rgb(125, 244, 125);
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.registrationContainerForBG{
+   
+display: flex;
+width: 600px;
+position: relative;
+
+}
+.radial1{
+    width: 400px;
+height: 400px;
+border-radius: 982px;
+background: radial-gradient(50% 50% at 50% 50%, #0077B7 0%, rgba(255, 255, 255, 0.00) 100%);
+position: absolute;
+top: 90px;
+}
+.radial2{
+    width: 400px;
+height: 400px;
+border-radius: 982px;
+background: radial-gradient(50% 50% at 50% 50%, #0077B7 0%, rgba(255, 255, 255, 0.00) 100%);
+position: absolute;
+bottom: 250px;
+left: 330px;
+}
+.radial3{
+    width: 400px;
+height: 400px;
+border-radius: 982px;
+border-radius: 829px;
+background: radial-gradient(50% 50% at 50% 50%, #F1F38F 0%, rgba(255, 255, 255, 0.00) 100%);
+position: absolute;
+top: 280px;
+left: 300px;
+
 }

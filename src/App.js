@@ -1,7 +1,12 @@
 import logo from "./logo.svg";
-import "./App.css";
+// import "./App.css";
+import Info from "../src/profile.page/Profile-page";
 
 function App() {
-  return <div className="ss"></div>;
+  return (
+    <>
+      <Info></Info>
+    </>
+  );
 }
 export default App;

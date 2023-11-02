@@ -1,4 +1,5 @@
 import "./style.css";
+import {  useNavigate } from 'react-router-dom';
 import profileBackground from "./images/Background.png";
 import pfp from "./images/pfp.png";
 import photopost from "./images/addPhoto.png";
@@ -12,6 +13,7 @@ import removebutton from "./images/removebutton.png";
 import morebutton from "./images/morebutton.png";
 
 const MainPage = () => {
+  
   return (
     <div className="main-page">
       <div className="container flex gap">

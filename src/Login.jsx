@@ -25,6 +25,7 @@ const Login=()=>{
           const userCredential=await signInWithEmailAndPassword(auth,loginEmail,loginPassword)
           const user=userCredential.user;
           console.log(user)
+          navigate("/MainPage")
         }catch(error){
           setLoginError("Invalid email or password. Please try again."); // Display an error message
           console.error("Error signing in: ", error);

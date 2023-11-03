@@ -1,3 +1,19 @@
+
+import React from "react";
+
+const Mainpage=()=>{
+
+
+    const userLogOut=async()=>{
+      
+    }
+    <div>
+        <h1 className="usernameandlastname">k</h1>
+        <button>esgrd</button>
+
+    </div>
+}
+
 import { useNavigate } from "react-router-dom";
 
 import "./style.css";
@@ -217,4 +233,5 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+
+export default Mainpage;

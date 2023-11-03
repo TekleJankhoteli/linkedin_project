@@ -6,6 +6,7 @@ import loginPageLogo from './assets/Logo.png';
 import loginPhotoOne from './assets/loginPhotoOne.png';
 import loginPhotoTwo from './assets/loginPhotoTwo.png';
 import { Link, useNavigate } from 'react-router-dom';
+import LittleFooter from "./components/LittleFooter.jsx";
 
 const Login=()=>{
     const navigate = useNavigate();
@@ -25,6 +26,7 @@ const Login=()=>{
           const userCredential=await signInWithEmailAndPassword(auth,loginEmail,loginPassword)
           const user=userCredential.user;
           console.log(user)
+          navigate("/MainPage")
         }catch(error){
           setLoginError("Invalid email or password. Please try again."); // Display an error message
           console.error("Error signing in: ", error);
@@ -35,6 +37,7 @@ const Login=()=>{
 
       
     return(
+      <>
         <div className="containerForLogin">
        <header>
         <img src={loginPageLogo} alt="/"/>
@@ -81,9 +84,9 @@ const Login=()=>{
 
         
        </main>
-
-    
        </div>
+              <LittleFooter/>
+</>
     )
 }
 export default Login;

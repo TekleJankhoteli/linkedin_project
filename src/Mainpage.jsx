@@ -1,20 +1,15 @@
 
 
+// import "./index.css";
+
 import { useNavigate } from "react-router-dom";
 
 import "./style.css";
-
-
 import { addDoc, collection } from "firebase/firestore";
 import { getDocs } from "firebase/firestore";
 import { auth, db } from "./firebaseconfiguration.js";
 import { useState,useEffect } from "react";
 import { updateProfile } from "firebase/auth";
-
-
-
-
-import {  useNavigate } from 'react-router-dom';
 
 import profileBackground from "./images/Background.png";
 import pfp from "./images/pfp.png";
@@ -31,10 +26,6 @@ import Header from "./components/Header";
 
 const MainPage = () => {
 
-  const navigate = useNavigate();
-  const gotoProfile = () => {
-    navigate("/profilepage");
-  };
 
 
 
@@ -240,6 +231,7 @@ useEffect(() => {
         <div className="friends-div posts">
           <p className="postersName">Add to your feed</p>
           <Users />
+        </div>
         </div>
       </div>
     </div>

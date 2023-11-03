@@ -3,11 +3,11 @@ import logo from "./../images/Logo 1.png";
 import pfp from "./../images/pfp.png";
 const Header = () => {
   return (
-    <div className="body flex">
-      <header className="flex">
+    <div className="body flex2">
+      <header className="flex2">
         <img src={logo} alt="logo" className="logo" />
-        <nav className="flex">
-          <ul className="flex header-ul">
+        <nav className="flex2">
+          <ul className="flex2 header-ul">
             <li>Home</li>
             <li>My Network</li>
             <li>Jobs</li>

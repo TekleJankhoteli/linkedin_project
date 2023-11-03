@@ -193,6 +193,7 @@
 }
 .header-ul {
   gap: 25px;
+  padding-top: 17px;
 }
 .header-ul li {
   list-style: none;
@@ -211,7 +212,6 @@
 }
 .background1 {
   width: 320px;
-  height: 443px;
   position: absolute;
 }
 .container {
@@ -396,12 +396,12 @@ td {
   cursor: pointer;
 }
 
-/* p {
+p {
   margin: 0;
 }
 ul {
   padding: 0;
-} */
+}
 
 footer {
   justify-content: center;

@@ -6,6 +6,7 @@ import loginPageLogo from './assets/Logo.png';
 import loginPhotoOne from './assets/loginPhotoOne.png';
 import loginPhotoTwo from './assets/loginPhotoTwo.png';
 import { Link, useNavigate } from 'react-router-dom';
+import LittleFooter from "./components/LittleFooter.jsx";
 
 const Login=()=>{
     const navigate = useNavigate();
@@ -36,6 +37,7 @@ const Login=()=>{
 
       
     return(
+      <>
         <div className="containerForLogin">
        <header>
         <img src={loginPageLogo} alt="/"/>
@@ -82,9 +84,9 @@ const Login=()=>{
 
         
        </main>
-
-    
        </div>
+              <LittleFooter/>
+</>
     )
 }
 export default Login;

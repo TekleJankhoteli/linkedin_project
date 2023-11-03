@@ -7,6 +7,7 @@ import { auth, db } from "./firebaseconfiguration.js";
 
 import { Link, useNavigate } from 'react-router-dom';
 import registrationPageLogo from './assets/Logo.png';
+import LittleFooter from "./components/LittleFooter.jsx";
 
 
 const Registration=()=>{
@@ -129,6 +130,7 @@ const Registration=()=>{
             </div>
 
             </div>
+            <LittleFooter/>
        </div>
     
     )

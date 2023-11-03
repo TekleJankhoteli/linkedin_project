@@ -2,7 +2,7 @@ import "./../style.css";
 
 const LittleFooter = () => {
   return (
-    <ul className="flex little-footer">
+    <ul className="flex2 little-footer">
       <li>About</li>
       <li>Accessibility</li>
       <li>User Agreement</li>

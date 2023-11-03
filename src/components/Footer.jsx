@@ -2,7 +2,7 @@ import "./../style.css";
 
 const Footer = () => {
   return (
-    <footer className="flex">
+    <footer className="flex2">
       <table>
         <tr>
           <th>General</th>

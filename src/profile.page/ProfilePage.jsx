@@ -27,10 +27,14 @@ import Experience from "./Experience";
 import MainInformation from "./mainInformation";
 import AsideBox from "./asideBox";
 import UserCard from "./userCard";
+import Header from "../components/Header";
+import LittleFooter from "../components/LittleFooter";
+import Footer from "../components/Footer";
 
 const ProfilePage = () => {
   return (
     <>
+    <Header/>
       <div className="background">
         <img className="icon" src={Icon} />
         <img className="ProfilePicture" src={ProfilePicture} />
@@ -282,6 +286,8 @@ const ProfilePage = () => {
           />
         </div>
       </div>
+      <Footer/>
+      <LittleFooter/>
     </>
   );
 };

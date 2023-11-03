@@ -1,3 +1,7 @@
+
+
+import { useNavigate } from "react-router-dom";
+
 import "./style.css";
 
 
@@ -11,6 +15,7 @@ import { updateProfile } from "firebase/auth";
 
 
 import {  useNavigate } from 'react-router-dom';
+
 import profileBackground from "./images/Background.png";
 import pfp from "./images/pfp.png";
 import photopost from "./images/addPhoto.png";
@@ -25,6 +30,12 @@ import morebutton from "./images/morebutton.png";
 import Header from "./components/Header";
 
 const MainPage = () => {
+
+  const navigate = useNavigate();
+  const gotoProfile = () => {
+    navigate("/profilepage");
+  };
+
 
 
   const [postInput, setPostInput] = useState("");
@@ -92,21 +103,26 @@ useEffect(() => {
   const gotoProfile = ()=>{
     navigate("/profilepage")
   }
+
   return (
   
    
     <div className="main-page">
+
+      <div className="container flex2 gap">
+
       <Header/>
       <div className="container flex gap">
+
         <div className="profile-div">
           <img
             src={profileBackground}
             alt="background"
-            className="background"
+            className="background1"
           />
           <div className="options">
             <img
-             onClick={gotoProfile}
+              onClick={gotoProfile}
               src={pfp}
               alt="profilepicture"
               className="div-profile-picture"
@@ -123,18 +139,18 @@ useEffect(() => {
             </ul>
           </div>
         </div>
-        <div className="posts-div flex">
-          <div className="publish-post flex">
+        <div className="posts-div flex2">
+          <div className="publish-post flex2">
             <div>
               <img
-              onClick={gotoProfile}
+                onClick={gotoProfile}
                 src={pfp}
                 alt="profilepicture"
                 className="publish-post-pfp"
               />
             </div>
-            <div className="postinputs flex">
-              <div className="flex gap5">
+            <div className="postinputs flex2">
+              <div className="flex2 gap5">
                 <input
                   type="text"
                   className="post-input"
@@ -145,7 +161,7 @@ useEffect(() => {
                <button className="gray-button" onClick={savePost}>Post</button>
               </div>
 
-              <div className="align-items-center flex gap10">
+              <div className="align-items-center flex2 gap10">
                 <img
                   src={photopost}
                   alt="picture"
@@ -191,7 +207,7 @@ useEffect(() => {
           
           <div className="posts">
             <div className="posts-box">
-              <div className="owner-of-posts flex">
+              <div className="owner-of-posts flex2">
                 <img src={pfp} alt="pfp" className="publish-post-pfp" />
                 <div className="width100">
                   <p className="postersName">Anthony J Jackson</p>
@@ -199,7 +215,7 @@ useEffect(() => {
                   <p className="time">5 d</p>
                 </div>
                 <div className="button-divs width100 gap10">
-                  <div className="flex gap10 button-divs end bottompad10px">
+                  <div className="flex2 gap10 button-divs end bottompad10px">
                     <img src={removebutton} /> <img src={morebutton} />
                   </div>
 
@@ -214,7 +230,7 @@ useEffect(() => {
             <div className="comment-section">
               <img src={postpic} alt="picture" className="posted-pic" />
               <p className="comment-number font-size-12px">80 comments</p>
-              <div className="flex center gap">
+              <div className="flex2 center gap">
                 <img src={commentIcon} className="commenticon" />
                 <p className="font-size-12px">comment</p>
               </div>

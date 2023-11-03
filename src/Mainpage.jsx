@@ -1,4 +1,15 @@
 import "./style.css";
+
+
+import { addDoc, collection } from "firebase/firestore";
+import { getDocs } from "firebase/firestore";
+import { auth, db } from "./firebaseconfiguration.js";
+import { useState,useEffect } from "react";
+import { updateProfile } from "firebase/auth";
+
+
+
+
 import {  useNavigate } from 'react-router-dom';
 import profileBackground from "./images/Background.png";
 import pfp from "./images/pfp.png";
@@ -11,14 +22,81 @@ import commentIcon from "./images/comenticon.png";
 import Users from "./components/Users";
 import removebutton from "./images/removebutton.png";
 import morebutton from "./images/morebutton.png";
+import Header from "./components/Header";
 
 const MainPage = () => {
+
+
+  const [postInput, setPostInput] = useState("");
+
+  const [posts, setPosts] = useState([]);
+
+
+
+
+  const savePost = async () => {
+    if (postInput.trim() === "") {
+      return; 
+    }
+  
+    try {
+    
+      const post = {
+        content: postInput,
+       date:Date.now()
+      };
+  
+      const docRef = await addDoc(collection(db, "posts"), post);
+  
+      setPostInput("");
+  
+      
+    } catch (error) {
+      console.error("Error saving post: ", error);
+    }
+  }
+
+  const user = auth.currentUser;
+  const displayName = user ? user.displayName : "Guest";
+
+
+  updateProfile(auth.currentUser, {
+    displayName: "Anna Matveichuk", 
+  }).then(() => {
+ 
+  }).catch((error) => {
+  
+  });
+
+  
+useEffect(() => {
+ 
+  const getPosts = async () => {
+  
+    const postsCollection = collection(db, "posts");
+    const querySnapshot = await getDocs(postsCollection);
+
+    const postsData = [];
+    querySnapshot.forEach((doc) => {
+      postsData.push(doc.data());
+    });
+
+    setPosts(postsData);
+  };
+
+  getPosts();
+}, []);
+
+
   const navigate = useNavigate()
   const gotoProfile = ()=>{
     navigate("/profilepage")
   }
   return (
+  
+   
     <div className="main-page">
+      <Header/>
       <div className="container flex gap">
         <div className="profile-div">
           <img
@@ -33,7 +111,7 @@ const MainPage = () => {
               alt="profilepicture"
               className="div-profile-picture"
             />
-            <p className="name">Anna Matveichuk</p>
+            <p className="name">{displayName}</p>
             <ul className="black-p">
               <li>Who’s viewed your profile</li>
               <li>Impressions of your post</li>
@@ -61,8 +139,10 @@ const MainPage = () => {
                   type="text"
                   className="post-input"
                   placeholder="Post something..."
+                  value={postInput}
+                  onChange={(e) => setPostInput(e.target.value)}
                 />
-                <button className="gray-button">post</button>
+               <button className="gray-button" onClick={savePost}>Post</button>
               </div>
 
               <div className="align-items-center flex gap10">
@@ -96,6 +176,19 @@ const MainPage = () => {
               </div>
             </div>
           </div>
+
+
+
+          <div className="posts">
+  {posts.map((post, index) => (
+    <div className="posts-box" key={index}>
+      <p className="post-caption">{post.content}</p>
+      {/* Add other post details here */}
+    </div>
+  ))}
+</div>
+
+          
           <div className="posts">
             <div className="posts-box">
               <div className="owner-of-posts flex">

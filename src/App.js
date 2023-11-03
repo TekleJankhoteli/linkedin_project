@@ -18,6 +18,7 @@ function App() {
   return (
     <div className="mainContainer">
       <Routes>
+   
         <Route path="/" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/MainPage" element={<MainPage />} />

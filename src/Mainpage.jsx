@@ -13,7 +13,10 @@ import removebutton from "./images/removebutton.png";
 import morebutton from "./images/morebutton.png";
 
 const MainPage = () => {
-  
+  const navigate = useNavigate()
+  const gotoProfile = ()=>{
+    navigate("/profilepage")
+  }
   return (
     <div className="main-page">
       <div className="container flex gap">
@@ -25,6 +28,7 @@ const MainPage = () => {
           />
           <div className="options">
             <img
+             onClick={gotoProfile}
               src={pfp}
               alt="profilepicture"
               className="div-profile-picture"
@@ -45,8 +49,9 @@ const MainPage = () => {
           <div className="publish-post flex">
             <div>
               <img
+              onClick={gotoProfile}
                 src={pfp}
-                alt="profile-picture"
+                alt="profilepicture"
                 className="publish-post-pfp"
               />
             </div>

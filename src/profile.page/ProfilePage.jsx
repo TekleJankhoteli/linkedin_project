@@ -25,7 +25,7 @@ import MainInformation from "./mainInformation";
 import AsideBox from "./asideBox";
 import UserCard from "./userCard";
 
-const Info = () => {
+const ProfilePage = () => {
   return (
     <>
       <div className="background">
@@ -283,4 +283,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default ProfilePage;
